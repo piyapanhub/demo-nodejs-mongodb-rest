@@ -1,14 +1,14 @@
 - name: git checkout code latest
   git:
-    repo: 'https://github.com/atisak/demo-nodejs-mongodb-rest.git'
+    repo: 'https://github.com/piyapanhub/demo-nodejs-mongodb-rest.git'
     dest: /tmp/demo-nodejs-mongodb-rest
     version: master
 
 - name: Build docker images
-  command: docker build -f /tmp/demo-nodejs-mongodb-rest/Dockerfile -t atisak/demo-nodejs:"{{ tagnumber }}" /tmp/demo-nodejs-mongodb-rest
+  command: docker build -f /tmp/demo-nodejs-mongodb-rest/Dockerfile -t piyapanker/workshop1:"{{ tagnumber }}" /tmp/demo-nodejs-mongodb-rest
 
 - name: Docker tag images
-  command: docker tag atisak/demo-nodejs:"{{ tagnumber }}" atisak/demo-nodejs:latest
+  command: docker tag piyapanker/workshop1:"{{ tagnumber }}" piyapanker/workshop1:latest
 
 - name: Docker push
-  command: docker push atisak/demo-nodejs:latest 
+  command: docker push piyapanker/workshop1:latest 
